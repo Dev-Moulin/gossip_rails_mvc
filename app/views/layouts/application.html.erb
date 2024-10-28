@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Gissip Migr" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><strong>Gossip de lozer!</strong></li>
+      </ul>
+      <ul>
+      <li><%= link_to "home", home_path%></li>
+        <li>
+          <details class="dropdown">
+            <summary>
+              Account
+            </summary>
+            <ul dir="rtl">
+              <li><%= link_to "team", team_path%></li>
+              <li><%= link_to "contact", contact_path%></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+        >
+        <title>Page one_gossip</title>
+    </head>
+    <body>
+
+        <h1><%= @gossips.title %></h1>
+        <p><%= @gossips.content %></p>
+        <p>Auteur : <%= link_to @gossips.user.first_name, gossip_path(@gossips.user) %></p>
+        <p class="card-text">
+            Créé le : <%= @gossips.created_at.strftime("%d/%m/%Y") %>
+        </p>
+    
+    </body>
+</html>
